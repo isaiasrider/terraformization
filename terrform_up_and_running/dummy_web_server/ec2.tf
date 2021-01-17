@@ -1,7 +1,7 @@
 resource "aws_instance" "example" {
 
-  ami = ""
-  instance_type = ""
+  ami = "ami-00ddb0e5626798373"
+  instance_type = "t2.micro"
   user_data = <<-EOF
   #/bin/bash
   echo "Hello World" > index.html
