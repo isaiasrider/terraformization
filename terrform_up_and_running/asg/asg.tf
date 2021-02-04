@@ -18,7 +18,7 @@ resource "aws_autoscaling_group" "asg_web" {
   health_check_type = "ELB"
 
   tag {
-    key = "terraform"
+    key = "Name"
     propagate_at_launch = false
     value = "Terraform asg"
   }

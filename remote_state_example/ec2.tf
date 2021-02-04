@@ -2,6 +2,7 @@ resource "aws_instance" "striknaidson" {
   ami           = "ami-0c94855ba95c71c99"
   instance_type = "t2.micro"
   key_name      = "terraform"
+  vpc_security_group_ids = [aws_se]
 
   tags = {
     Name = "webserver_test"
