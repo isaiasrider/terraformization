@@ -85,4 +85,9 @@ resource "aws_lb_listener_rule" "listener_rule" {
 
 data template_file script {
   template = "${file("${path.module}/script/user-data.sh")}"
+  vars = {
+    database_address = data.terraform_remote_state.db.outputs.db_url
+    database_port = data.terraform_remote_state.db.outputs.db_port
+
+  }
 }
