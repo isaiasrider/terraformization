@@ -1,5 +1,5 @@
 resource "aws_security_group" "asg_security_group" {
-  name = "${var.cluster_name}-alb"
+  name = lower("sg_${var.cluster_name}")
 
   ingress {
     from_port = 8080
@@ -26,4 +26,8 @@ resource "aws_security_group" "asg_security_group" {
     to_port = 0
     cidr_blocks = ["0.0.0.0/0"]
   }
+  tags = {
+    Name = "${var.cluster_name}-sg"
+  }
 }
+

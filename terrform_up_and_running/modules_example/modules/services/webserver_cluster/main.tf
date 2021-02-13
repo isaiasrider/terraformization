@@ -16,8 +16,8 @@ resource "aws_launch_configuration" "asg_web_launch_configuration" {
 
 resource "aws_autoscaling_group" "asg_web" {
   launch_configuration = aws_launch_configuration.asg_web_launch_configuration.name
-  max_size = 2
-  min_size = 1
+  max_size = var.max_size
+  min_size = var.min_size
   vpc_zone_identifier = data.aws_subnet_ids.default.ids
   name_prefix = "${var.cluster_name}-instance"
 

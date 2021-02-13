@@ -4,7 +4,7 @@ module "create_database" {
   engine = "mysql"
   instance_name = "TENANT"
   environment = "stage"
-  number = "02"
+  number = "01"
   instance_class = "db.t2.micro"
 
 }

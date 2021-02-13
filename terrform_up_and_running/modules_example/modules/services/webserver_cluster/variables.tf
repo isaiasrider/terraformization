@@ -16,3 +16,14 @@ variable "db_remote_state_key" {
   description = "path to reach the tf-remote-state db"
   type = string
 }
+
+variable "min_size" {
+  description = "set up minimum size over ASGs"
+  type = number
+}
+
+variable "max_size" {
+  description = "set up minimum size over ASGs"
+  type = number
+}
+
